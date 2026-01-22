@@ -558,3 +558,198 @@ input[type="radio"] {
   font-feature-settings: 'tnum' on, 'lnum' on;
   letter-spacing: -0.03em;
 }
+
+/* ============================================
+   GABON MAP ANIMATIONS
+   ============================================ */
+@keyframes map-draw {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes map-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(252, 209, 22, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(252, 209, 22, 0.6));
+  }
+}
+
+@keyframes province-dash {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes city-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes connection-flow {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+}
+
+.gabon-map-animate {
+  color: rgba(255, 255, 255, 0.9);
+  animation: map-glow 4s ease-in-out infinite;
+}
+
+.gabon-outline {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: map-draw 3s ease-out forwards;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.province-line {
+  stroke-dasharray: 8 4;
+  animation: province-dash 2s linear infinite;
+  opacity: 0.4;
+}
+
+.province-line.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.province-line.delay-2 {
+  animation-delay: 1s;
+}
+
+.province-line.delay-3 {
+  animation-delay: 1.5s;
+}
+
+.city-dot {
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+.city-dot.libreville {
+  fill: var(--gabon-yellow);
+  filter: drop-shadow(0 0 6px var(--gabon-yellow));
+}
+
+.city-pulse {
+  fill: var(--gabon-yellow);
+  animation: city-pulse 2s ease-out infinite;
+  transform-origin: center;
+}
+
+.connection-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: connection-flow 3s ease-out forwards infinite;
+}
+
+.connection-line.delay-1 {
+  animation-delay: 0.7s;
+}
+
+.connection-line.delay-2 {
+  animation-delay: 1.4s;
+}
+
+.connection-line.delay-3 {
+  animation-delay: 2.1s;
+}
+
+.connection-line.delay-4 {
+  animation-delay: 2.8s;
+}
+
+.connection-line.delay-5 {
+  animation-delay: 3.5s;
+}
+
+/* Small city pulses */
+@keyframes city-pulse-small {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.city-pulse-small {
+  animation: city-pulse-small 2.5s ease-out infinite;
+  transform-origin: center;
+}
+
+.delay-pulse-1 {
+  animation-delay: 0.8s;
+}
+
+.delay-pulse-2 {
+  animation-delay: 1.6s;
+}
+
+/* Map fill breathing effect */
+@keyframes map-breathe {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.map-fill {
+  animation: map-breathe 4s ease-in-out infinite;
+}
+
+/* City label fade in */
+@keyframes label-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.city-label {
+  animation: label-fade 1s ease-out 2s forwards;
+  opacity: 0;
+}
+
+/* Map hover effects */
+.gabon-map-animate:hover .gabon-outline {
+  filter: drop-shadow(0 0 15px rgba(252, 209, 22, 0.8));
+}
+
+.gabon-map-animate:hover .city-dot.libreville {
+  filter: drop-shadow(0 0 12px var(--gabon-yellow));
+}
+
+.gabon-map-animate:hover .map-fill {
+  opacity: 0.6;
+}

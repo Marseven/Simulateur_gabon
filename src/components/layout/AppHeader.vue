@@ -3,12 +3,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-18">
         <!-- Logo -->
-        <router-link to="/" class="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
-          <div class="flag-stripe group-hover:scale-110 transition-transform duration-300">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <router-link to="/" class="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+          <img
+            src="@/assets/images/sceau_gabon.png"
+            alt="Sceau du Gabon"
+            class="w-9 h-9 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+          />
           <span class="text-lg sm:text-xl font-display font-bold text-neutral-800">
             Proxi<span class="text-gabon-green">Gab</span>
           </span>

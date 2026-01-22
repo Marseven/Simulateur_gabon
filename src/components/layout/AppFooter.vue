@@ -6,13 +6,11 @@
         <!-- Brand -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <div class="flex items-center gap-1">
-              <div class="w-2 h-8 bg-gabon-green rounded-sm"></div>
-              <div class="w-2 h-8 bg-gabon-yellow rounded-sm"></div>
-              <div class="w-2 h-8 bg-gabon-blue rounded-sm"></div>
+            <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center p-1.5">
+              <img src="@/assets/images/sceau_gabon.png" alt="Sceau du Gabon" class="w-full h-full object-contain"/>
             </div>
             <div>
-              <span class="text-lg font-bold">Proxi<span class="text-gabon-green">Gab</span></span>
+              <span class="text-lg font-display font-bold">Proxi<span class="text-gabon-green">Gab</span></span>
             </div>
           </div>
           <p class="text-sm text-neutral-400 mb-4">
@@ -95,9 +93,14 @@
             <span>&copy; {{ currentYear }} ProxiGab.</span>
             <span>Tous droits reserves.</span>
           </div>
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3">
             <span class="text-xs text-neutral-500">Une initiative du</span>
-            <span class="text-sm font-medium text-neutral-300">Ministere du Commerce et des PME</span>
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded bg-white/10 p-0.5">
+                <img src="@/assets/images/logo_harmoirie.png" alt="Armoiries du Gabon" class="w-full h-full object-contain"/>
+              </div>
+              <span class="text-sm font-medium text-neutral-300">Ministere du Commerce et des PME</span>
+            </div>
           </div>
         </div>
       </div>

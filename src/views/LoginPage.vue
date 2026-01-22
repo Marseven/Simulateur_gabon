@@ -5,10 +5,8 @@
       <div class="w-full max-w-md mx-auto">
         <!-- Logo -->
         <router-link to="/" class="inline-flex items-center gap-3 mb-8 group">
-          <div class="flag-stripe group-hover:scale-110 transition-transform">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-gabon-green/10 to-gabon-yellow/10 flex items-center justify-center p-1.5 group-hover:scale-110 transition-transform shadow-sm">
+            <img src="@/assets/images/sceau_gabon.png" alt="Sceau du Gabon" class="w-full h-full object-contain"/>
           </div>
           <div>
             <span class="text-xl font-display font-bold text-neutral-800">Proxi<span class="text-gabon-green">Gab</span></span>
