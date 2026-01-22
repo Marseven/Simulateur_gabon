@@ -1,20 +1,40 @@
 <template>
-  <div class="space-y-6">
-    <!-- Welcome Header -->
-    <div class="bg-gradient-to-r from-gabon-blue to-gabon-blue-dark rounded-2xl p-6 text-white">
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-white/80 text-sm">Espace</p>
-          <h1 class="text-2xl font-bold">{{ companyName }}</h1>
-          <p class="text-white/70 mt-1">Fonds d'investissement</p>
-        </div>
-        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
+  <div class="min-h-screen bg-mesh">
+    <!-- Hero Header -->
+    <div class="bg-gradient-to-br from-gabon-blue via-gabon-blue-dark to-gabon-blue relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gabon-yellow/10 rounded-full blur-3xl -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="text-white">
+              <p class="text-white/70 text-sm">Espace Investisseur</p>
+              <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold">{{ companyName }}</h1>
+              <p class="text-white/70 mt-0.5 text-sm">Fonds d'investissement</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <router-link to="/projects" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-gabon-blue-dark font-semibold rounded-xl hover:bg-gabon-yellow transition-colors shadow-lg shadow-black/10">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span class="hidden sm:inline">Explorer projets</span>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-5 sm:space-y-6">
 
     <!-- Stats Grid -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -128,38 +148,43 @@
 
     <!-- Pipeline Overview -->
     <BaseCard title="Apercu du pipeline">
-      <div class="flex gap-4 overflow-x-auto pb-2">
+      <div class="flex gap-3 sm:gap-4 overflow-x-auto pb-2 -mx-1 px-1">
         <div
           v-for="stage in pipelineStages"
           :key="stage.name"
-          class="min-w-[140px] bg-neutral-50 rounded-xl p-4 text-center"
+          class="min-w-[120px] sm:min-w-[140px] bg-neutral-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center flex-shrink-0"
         >
           <div class="w-3 h-3 rounded-full mx-auto mb-2" :class="stage.color"></div>
-          <p class="text-2xl font-bold text-neutral-800">{{ stage.count }}</p>
+          <p class="text-xl sm:text-2xl font-display font-bold text-neutral-800">{{ stage.count }}</p>
           <p class="text-xs text-neutral-500">{{ stage.name }}</p>
         </div>
       </div>
 
-      <div class="mt-6 space-y-4">
+      <div class="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
         <div
           v-for="project in pipelineProjects"
           :key="project.id"
-          class="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl"
+          class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 bg-neutral-50 rounded-xl sm:rounded-2xl"
         >
-          <div class="w-12 h-12 bg-gabon-green/10 rounded-xl flex items-center justify-center">
-            <svg class="w-6 h-6 text-gabon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-            </svg>
+          <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gabon-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gabon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-semibold text-neutral-800 text-sm sm:text-base">{{ project.name }}</h4>
+              <p class="text-xs sm:text-sm text-neutral-500">{{ project.sector }}</p>
+            </div>
           </div>
-          <div class="flex-1 min-w-0">
-            <h4 class="font-semibold text-neutral-800">{{ project.name }}</h4>
-            <p class="text-sm text-neutral-500">{{ project.sector }}</p>
+          <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
+            <BaseBadge :variant="stageVariant(project.stage)" size="sm">{{ project.stage }}</BaseBadge>
+            <span class="text-sm font-semibold text-gabon-green whitespace-nowrap">{{ formatAmount(project.fundingNeeded) }}</span>
           </div>
-          <BaseBadge :variant="stageVariant(project.stage)" size="sm">{{ project.stage }}</BaseBadge>
-          <span class="text-sm font-semibold text-gabon-green">{{ formatAmount(project.fundingNeeded) }}</span>
         </div>
       </div>
     </BaseCard>
+    </div>
   </div>
 </template>
 

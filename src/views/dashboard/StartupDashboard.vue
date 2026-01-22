@@ -1,25 +1,45 @@
 <template>
-  <div class="space-y-6">
-    <!-- Welcome Header -->
-    <div class="bg-gradient-to-r from-gabon-green to-gabon-green-dark rounded-2xl p-6 text-white">
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-white/80 text-sm">Bienvenue</p>
-          <h1 class="text-2xl font-bold">{{ companyName }}</h1>
-          <p class="text-white/70 mt-1 flex items-center gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            Profil verifie
-          </p>
-        </div>
-        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-          </svg>
+  <div class="min-h-screen bg-mesh">
+    <!-- Hero Header -->
+    <div class="bg-gradient-to-br from-gabon-green via-gabon-green-dark to-gabon-green relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gabon-yellow/10 rounded-full blur-3xl -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <div class="text-white">
+              <p class="text-white/70 text-sm">Bienvenue</p>
+              <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold">{{ companyName }}</h1>
+              <p class="text-white/70 mt-0.5 flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4 text-gabon-yellow" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Profil verifie
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <router-link to="/my-projects/new" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-gabon-green-dark font-semibold rounded-xl hover:bg-gabon-yellow transition-colors shadow-lg shadow-black/10">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+              <span class="hidden sm:inline">Nouveau projet</span>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-5 sm:space-y-6">
 
     <!-- Stats Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -182,18 +202,18 @@
         </router-link>
       </template>
 
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div
           v-for="investor in suggestedInvestors"
           :key="investor.id"
-          class="p-4 bg-neutral-50 rounded-xl text-center card-hover cursor-pointer"
+          class="p-4 sm:p-5 bg-neutral-50 rounded-xl sm:rounded-2xl text-center card-hover cursor-pointer"
         >
-          <div class="w-14 h-14 bg-gabon-blue/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-            <svg class="w-7 h-7 text-gabon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gabon-blue/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gabon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
           </div>
-          <h4 class="font-semibold text-neutral-800">{{ investor.name }}</h4>
+          <h4 class="font-semibold text-neutral-800 text-sm sm:text-base">{{ investor.name }}</h4>
           <p class="text-xs text-neutral-500 mb-3">{{ investor.type }}</p>
           <router-link :to="`/investors/${investor.id}`" class="text-sm font-medium text-gabon-green hover:text-gabon-green-dark">
             Voir profil
@@ -201,6 +221,7 @@
         </div>
       </div>
     </BaseCard>
+    </div>
   </div>
 </template>
 

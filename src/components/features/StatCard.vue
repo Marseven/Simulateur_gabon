@@ -1,25 +1,26 @@
 <template>
-  <div :class="['rounded-xl p-6', bgClass]">
-    <div class="flex items-start justify-between">
-      <div>
-        <p class="text-sm font-medium" :class="labelClass">{{ label }}</p>
-        <p class="text-3xl font-bold mt-2" :class="valueClass">
+  <div :class="['rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6', bgClass]">
+    <div class="flex items-start justify-between gap-3">
+      <div class="min-w-0 flex-1">
+        <p class="text-xs sm:text-sm font-medium truncate" :class="labelClass">{{ label }}</p>
+        <p class="text-2xl sm:text-3xl font-display font-bold mt-1 sm:mt-2" :class="valueClass">
           {{ formattedValue }}
-          <span v-if="suffix" class="text-lg font-normal" :class="labelClass">{{ suffix }}</span>
+          <span v-if="suffix" class="text-base sm:text-lg font-normal" :class="labelClass">{{ suffix }}</span>
         </p>
-        <p v-if="change" class="text-sm mt-2 flex items-center gap-1" :class="changeClass">
-          <svg v-if="change > 0" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <p v-if="change" class="text-xs sm:text-sm mt-1.5 sm:mt-2 flex items-center gap-1" :class="changeClass">
+          <svg v-if="change > 0" class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M7 14l5-5 5 5H7z"/>
           </svg>
-          <svg v-else class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <svg v-else class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M7 10l5 5 5-5H7z"/>
           </svg>
-          {{ Math.abs(change) }}% vs mois dernier
+          <span class="hidden sm:inline">{{ Math.abs(change) }}% vs mois dernier</span>
+          <span class="sm:hidden">{{ Math.abs(change) }}%</span>
         </p>
       </div>
-      <div :class="['w-12 h-12 rounded-xl flex items-center justify-center', iconBgClass]">
+      <div :class="['w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0', iconBgClass]">
         <slot name="icon">
-          <svg class="w-6 h-6" :class="iconClass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" :class="iconClass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </slot>
