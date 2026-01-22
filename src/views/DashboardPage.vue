@@ -13,6 +13,8 @@ const dashboardComponent = computed(() => {
       return defineAsyncComponent(() => import('@/views/dashboard/InvestorDashboard.vue'))
     case 'supplier':
       return defineAsyncComponent(() => import('@/views/dashboard/SupplierDashboard.vue'))
+    case 'admin':
+      return defineAsyncComponent(() => import('@/views/dashboard/AdminDashboard.vue'))
     default:
       return defineAsyncComponent(() => import('@/views/dashboard/StartupDashboard.vue'))
   }

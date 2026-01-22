@@ -133,6 +133,24 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </button>
+
+            <button
+              @click="loginAs('admin')"
+              class="w-full flex items-center gap-3 p-3 sm:p-4 bg-white rounded-xl border-2 border-neutral-100 hover:border-neutral-400 hover:shadow-md transition-all text-left group"
+            >
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-neutral-700 to-neutral-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm sm:text-base font-semibold text-neutral-800">Administrateur</p>
+                <p class="text-xs sm:text-sm text-neutral-500 truncate">admin@ministere.ga</p>
+              </div>
+              <svg class="w-5 h-5 text-neutral-300 group-hover:text-neutral-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -230,7 +248,13 @@ const loginAs = async (type) => {
   await new Promise(resolve => setTimeout(resolve, 500))
   localStorage.setItem('userType', type)
   localStorage.setItem('isAuthenticated', 'true')
-  localStorage.setItem('userName', type === 'startup' ? 'AgriGabon Tech' : type === 'investor' ? 'BGD Capital' : 'TechServ LBV')
+  const names = {
+    startup: 'AgriGabon Tech',
+    investor: 'BGD Capital',
+    supplier: 'TechServ LBV',
+    admin: 'Ministere du Commerce'
+  }
+  localStorage.setItem('userName', names[type] || 'Utilisateur')
   router.push('/dashboard')
 }
 </script>

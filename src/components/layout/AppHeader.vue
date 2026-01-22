@@ -240,7 +240,8 @@ const userTypeLabel = computed(() => {
   const labels = {
     'startup': 'Startup / PME',
     'investor': 'Investisseur',
-    'supplier': 'Fournisseur'
+    'supplier': 'Fournisseur',
+    'admin': 'Administrateur'
   }
   return labels[userType.value] || 'Utilisateur'
 })
@@ -270,11 +271,18 @@ const SupplierIcon = {
   ])
 }
 
+const MatchingIcon = {
+  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
+    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M13 10V3L4 14h7v7l9-11h-7z' })
+  ])
+}
+
 const navigation = [
   { name: 'Accueil', path: '/', icon: HomeIcon },
   { name: 'Projets', path: '/projects', icon: ProjectIcon },
   { name: 'Investisseurs', path: '/investors', icon: InvestorIcon },
   { name: 'Fournisseurs', path: '/suppliers', icon: SupplierIcon },
+  { name: 'Matching', path: '/matching', icon: MatchingIcon },
 ]
 
 const logout = () => {

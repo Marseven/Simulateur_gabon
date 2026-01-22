@@ -72,6 +72,11 @@ const routes = [
     component: () => import('@/views/suppliers/SupplierDetail.vue')
   },
   {
+    path: '/matching',
+    name: 'matching',
+    component: () => import('@/views/MatchingPage.vue')
+  },
+  {
     path: '/messages',
     name: 'messages',
     component: () => import('@/views/MessagesPage.vue'),

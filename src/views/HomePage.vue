@@ -6,73 +6,23 @@
     <section class="relative min-h-[100svh] md:min-h-screen flex items-center bg-hero-pattern overflow-hidden">
       <!-- Animated Background with Gabon Map -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <!-- Gabon Map SVG - Animated -->
-        <div class="absolute right-[-10%] lg:right-[5%] top-1/2 -translate-y-1/2 w-[600px] h-[700px] lg:w-[800px] lg:h-[900px] opacity-[0.15] lg:opacity-[0.2]">
-          <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full gabon-map-animate">
-            <!-- Defs for gradients and filters -->
-            <defs>
-              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#FCD116;stop-opacity:0.3" />
-                <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.5" />
-                <stop offset="100%" style="stop-color:#FCD116;stop-opacity:0.3" />
-              </linearGradient>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- Gabon country outline - filled with subtle gradient -->
-            <path
-              d="M180 20 L220 25 L260 35 L290 50 L320 75 L340 100 L355 130 L365 165 L370 200 L368 240 L360 280 L345 320 L325 355 L300 385 L270 410 L235 430 L200 445 L165 455 L130 458 L100 455 L75 445 L55 430 L40 410 L30 385 L25 355 L28 320 L38 280 L55 240 L75 200 L95 165 L120 130 L145 100 L165 75 L180 50 Z"
-              fill="url(#mapGradient)"
-              class="map-fill"
-            />
-
-            <!-- Gabon country outline - animated stroke -->
-            <path
-              d="M180 20 L220 25 L260 35 L290 50 L320 75 L340 100 L355 130 L365 165 L370 200 L368 240 L360 280 L345 320 L325 355 L300 385 L270 410 L235 430 L200 445 L165 455 L130 458 L100 455 L75 445 L55 430 L40 410 L30 385 L25 355 L28 320 L38 280 L55 240 L75 200 L95 165 L120 130 L145 100 L165 75 L180 50 Z"
-              class="gabon-outline"
-              stroke="currentColor"
-              stroke-width="3"
-              fill="none"
-              filter="url(#glow)"
-            />
-
-            <!-- Province borders - animated dashes -->
-            <path d="M100 200 Q150 220 200 200 Q250 180 300 200" class="province-line" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="8 4"/>
-            <path d="M80 300 Q150 280 220 300 Q290 320 340 290" class="province-line delay-1" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="8 4"/>
-            <path d="M150 100 L180 180 L160 280 L180 380" class="province-line delay-2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="8 4"/>
-            <path d="M250 120 L270 200 L250 300 L280 400" class="province-line delay-3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="8 4"/>
-
-            <!-- Network connection lines - glowing -->
-            <path d="M200 380 Q240 290 280 200" class="connection-line" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
-            <path d="M200 380 Q160 320 120 250" class="connection-line delay-1" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
-            <path d="M200 380 Q190 265 180 150" class="connection-line delay-2" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
-            <path d="M200 380 Q250 350 300 320" class="connection-line delay-3" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
-            <path d="M280 200 L300 320" class="connection-line delay-4" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
-            <path d="M120 250 L180 150" class="connection-line delay-5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
-
-            <!-- Cities dots with pulse effects -->
-            <circle cx="200" cy="380" r="10" class="city-dot libreville" fill="currentColor" filter="url(#glow)"/>
-            <circle cx="200" cy="380" r="10" class="city-pulse" fill="currentColor"/>
-            <circle cx="200" cy="380" r="10" class="city-pulse delay-pulse-2" fill="currentColor"/>
-            <circle cx="280" cy="200" r="6" class="city-dot" fill="currentColor"/>
-            <circle cx="280" cy="200" r="6" class="city-pulse-small" fill="currentColor"/>
-            <circle cx="120" cy="250" r="6" class="city-dot" fill="currentColor"/>
-            <circle cx="120" cy="250" r="6" class="city-pulse-small delay-pulse-1" fill="currentColor"/>
-            <circle cx="180" cy="150" r="5" class="city-dot" fill="currentColor"/>
-            <circle cx="300" cy="320" r="5" class="city-dot" fill="currentColor"/>
-            <circle cx="300" cy="320" r="5" class="city-pulse-small delay-pulse-2" fill="currentColor"/>
-
-            <!-- City labels -->
-            <text x="200" y="405" class="city-label" fill="currentColor" text-anchor="middle" font-size="12" font-weight="bold">LIBREVILLE</text>
-            <text x="280" y="185" class="city-label" fill="currentColor" text-anchor="middle" font-size="9" opacity="0.7">Franceville</text>
-            <text x="120" y="270" class="city-label" fill="currentColor" text-anchor="middle" font-size="9" opacity="0.7">Lambarene</text>
-          </svg>
+        <!-- Gabon Map Image - Centered with Halo Waves -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[800px] lg:w-[900px] lg:h-[1000px] xl:w-[1000px] xl:h-[1100px] pointer-events-none flex items-center justify-center">
+          <!-- Halo Wave Rings -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="absolute w-[60%] h-[60%] rounded-full border-2 animate-wave-ring" style="border-color: rgba(252, 209, 22, 0.3);"></div>
+            <div class="absolute w-[75%] h-[75%] rounded-full border-2 animate-wave-ring" style="border-color: rgba(252, 209, 22, 0.2); animation-delay: 1s;"></div>
+            <div class="absolute w-[90%] h-[90%] rounded-full border animate-wave-ring" style="border-color: rgba(0, 150, 57, 0.2); animation-delay: 2s;"></div>
+            <div class="absolute w-[105%] h-[105%] rounded-full border animate-wave-ring" style="border-color: rgba(58, 117, 196, 0.15); animation-delay: 3s;"></div>
+          </div>
+          <!-- Radial Glow Halo -->
+          <div class="absolute w-[80%] h-[80%] rounded-full animate-pulse-slow" style="background: radial-gradient(circle, rgba(252, 209, 22, 0.25) 0%, rgba(0, 150, 57, 0.15) 40%, transparent 70%);"></div>
+          <!-- Map Image -->
+          <img
+            src="@/assets/images/gabon-v.png"
+            alt="Carte du Gabon"
+            class="w-[70%] h-[70%] object-contain gabon-map-image relative z-10"
+          />
         </div>
 
         <!-- Floating geometric shapes -->
