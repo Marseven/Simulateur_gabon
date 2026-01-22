@@ -4,15 +4,13 @@
     <div class="flex-1 flex items-center justify-center p-8">
       <div class="w-full max-w-md">
         <!-- Logo -->
-        <router-link to="/" class="flex items-center gap-3 mb-8">
-          <div class="flex items-center gap-1">
-            <div class="w-2 h-8 bg-gabon-green rounded-sm"></div>
-            <div class="w-2 h-8 bg-gabon-yellow rounded-sm"></div>
-            <div class="w-2 h-8 bg-gabon-blue rounded-sm"></div>
+        <router-link to="/" class="flex items-center gap-3 mb-8 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gabon-green to-gabon-green-dark p-2 shadow-lg shadow-gabon-green/20 group-hover:shadow-gabon-green/30 transition-shadow">
+            <img src="@/assets/images/sceau_gabon.png" alt="Sceau du Gabon" class="w-full h-full object-contain"/>
           </div>
           <div>
-            <span class="text-xl font-bold text-neutral-800">PNMR</span>
-            <span class="text-xs text-neutral-500 block -mt-1">Gabon</span>
+            <span class="text-2xl font-display font-bold text-neutral-800">Proxi<span class="text-gabon-yellow">Gab</span></span>
+            <span class="text-xs text-neutral-500 block">Plateforme de Mise en Relation</span>
           </div>
         </router-link>
 
@@ -203,30 +201,52 @@
     </div>
 
     <!-- Right side - Image/Pattern -->
-    <div class="hidden lg:flex flex-1 bg-gradient-to-br from-gabon-green via-gabon-green-dark to-gabon-blue items-center justify-center p-12">
-      <div class="max-w-md text-white text-center">
-        <div class="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-8">
-          <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
-          </svg>
+    <div class="hidden lg:flex flex-1 bg-gradient-to-br from-gabon-green via-gabon-green-dark to-gabon-blue items-center justify-center p-12 relative overflow-hidden">
+      <!-- Background decorative elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-gabon-yellow/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-gabon-blue/20 rounded-full blur-3xl"></div>
+        <!-- Grid pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      </div>
+
+      <div class="relative max-w-md text-white text-center">
+        <!-- Logo -->
+        <div class="w-28 h-28 bg-white/15 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 p-4 border border-white/20 shadow-2xl">
+          <img src="@/assets/images/sceau_gabon.png" alt="Sceau du Gabon" class="w-full h-full object-contain"/>
         </div>
-        <h2 class="text-2xl font-bold mb-4">Rejoignez l'ecosysteme</h2>
-        <p class="text-white/80 mb-8">
+
+        <!-- Title -->
+        <h2 class="text-3xl font-display font-bold mb-2">
+          Proxi<span class="text-gabon-yellow">Gab</span>
+        </h2>
+        <p class="text-lg text-white/90 font-medium mb-4">Rejoignez l'ecosysteme</p>
+        <p class="text-white/70 mb-10">
           Plus de 500 entreprises nous font deja confiance pour developper leurs activites au Gabon.
         </p>
-        <div class="flex justify-center gap-8 text-center">
-          <div>
-            <p class="text-3xl font-bold">527+</p>
+
+        <!-- Stats -->
+        <div class="flex justify-center gap-6 text-center">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4 border border-white/10">
+            <p class="text-3xl font-display font-bold text-gabon-yellow">527+</p>
             <p class="text-sm text-white/70">Projets</p>
           </div>
-          <div>
-            <p class="text-3xl font-bold">253+</p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4 border border-white/10">
+            <p class="text-3xl font-display font-bold text-gabon-yellow">253+</p>
             <p class="text-sm text-white/70">Investisseurs</p>
           </div>
-          <div>
-            <p class="text-3xl font-bold">850M+</p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-4 border border-white/10">
+            <p class="text-3xl font-display font-bold text-gabon-yellow">850M+</p>
             <p class="text-sm text-white/70">FCFA leves</p>
           </div>
+        </div>
+
+        <!-- Trust badge -->
+        <div class="mt-10 inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+          <svg class="w-5 h-5 text-gabon-yellow" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-sm text-white/90">Plateforme officielle du Gabon</span>
         </div>
       </div>
     </div>
