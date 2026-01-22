@@ -25,6 +25,9 @@
     <template v-else>
       <router-view />
     </template>
+
+    <!-- ChatBot - visible on all pages -->
+    <ChatBot />
   </div>
 </template>
 
@@ -34,6 +37,7 @@ import { useRoute } from 'vue-router'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import AppSidebar from '@/components/layout/AppSidebar.vue'
+import ChatBot from '@/components/common/ChatBot.vue'
 
 const route = useRoute()
 
